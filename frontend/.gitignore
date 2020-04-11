@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+yarn-error.log
+public/*
+src/js/settings.js
