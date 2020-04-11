@@ -13,6 +13,7 @@ const char* ssid = SSID;
 const char* password = PASSWORD;
 const int port = 80;
 const char* requestPattern = "GET /send?button=";
+const int displayBrightness = 9;
 
 // 関数プロトタイプ宣言
 void sendIR(String &button);
@@ -38,6 +39,7 @@ void setup() {
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setTextSize(1);
   M5.Lcd.println("TV Remote Controller");
+  M5.Axp.ScreenBreath(displayBrightness);
 
   // IR モジュール初期化
   irsend.begin();
@@ -116,7 +118,7 @@ void loop() {
       String buttonName = httpHeader.substring(beginpos, beginpos + endpos);
       sendIR(buttonName);
     } else {
-      char* message = "parameter is not found.";
+      const char* message = "parameter is not found.";
       client.println(message);
       Serial.println(message);
       break;
