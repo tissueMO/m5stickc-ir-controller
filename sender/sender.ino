@@ -144,7 +144,7 @@ void loop() {
 void sendIR(String &button) {
   Serial.print("Button Name '");
   Serial.print(button);
-  Serial.print("'");
+  Serial.print("' ");
   M5.Lcd.print("[");
   M5.Lcd.print(button);
   M5.Lcd.print("] ");
@@ -166,6 +166,7 @@ void sendIR(String &button) {
 
   // 見つかったコードを送信
   irsend.sendNEC(command);
+  Serial.println();
   Serial.printf("Send IR: 0x%08LX", command);
   M5.Lcd.println();
   M5.Lcd.printf("Send IR: 0x%08LX", command);
