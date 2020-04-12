@@ -120,7 +120,9 @@ M5StickC の IR トランスミッターを利用したリモコンアプリで�
 
 - [M5StickCで赤外線リモコンを使う - Lang-ship](https://lang-ship.com/blog/work/m5stickc-ir/)
 - [crankyoldgit/IRremoteESP8266](https://github.com/crankyoldgit/IRremoteESP8266)
-
+- [ICOOON MONO](https://icooon-mono.com/)
+    - このリポジトリーで使用している favicon の著作権は上記サイトの TopeconHeroes 様に帰属します。
+    
 
 ## License
 
