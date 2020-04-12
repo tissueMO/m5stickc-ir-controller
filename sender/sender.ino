@@ -7,8 +7,6 @@
 
 // 定数定義
 #include "settings.h"
-// #define SSID {SSID}
-// #define PASSWORD {PASSWORD}
 const char* ssid = SSID;
 const char* password = PASSWORD;
 const int port = 80;
