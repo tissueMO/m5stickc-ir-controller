@@ -12,5 +12,7 @@
   <%- (button.attributes.includes('fill')) ? 'flex-fill' : '' %>
   <%- (button.attributes.includes('strong')) ? 'font-weight-bold h3' : '' %>
 " type="button" data-codename="<%- button.name %>">
-  <%- button.caption %>
+  <%- (button.attributes.includes('small')) ? '<small class="d-inline-flex flex-column align-items-center">' : '' %>
+    <%- button.caption %>
+  <%- (button.attributes.includes('small')) ? '</small>' : '' %>
 </button>

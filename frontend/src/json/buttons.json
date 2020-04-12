@@ -20,44 +20,34 @@
       {
         "caption": "入力切換",
         "name": "INPUTSELECT",
-        "attributes": [ "fill" ]
+        "attributes": [ "fill", "small" ]
       },
       {
         "caption": "地デジ",
         "name": "TERRESTRIALDIGITAL",
-        "attributes": [ "fill" ]
+        "attributes": [ "fill", "small" ]
       },
       {
         "caption": "オフタイマー",
         "name": "OFFTIMER",
-        "attributes": [ "fill" ]
-      },
-      {
-        "caption": "3桁入力",
-        "name": "3DIGIT",
-        "attributes": [ "fill" ]
+        "attributes": [ "fill", "small" ]
       }
     ],
     [
       {
         "caption": "画面表示",
         "name": "DISPLAY",
-        "attributes": [ "fill" ]
+        "attributes": [ "fill", "small" ]
       },
       {
         "caption": "画面サイズ",
         "name": "SIZE",
-        "attributes": [ "fill" ]
-      },
-      {
-        "caption": "省エネ",
-        "name": "SAVEENERGY",
-        "attributes": [ "fill" ]
+        "attributes": [ "fill", "small" ]
       },
       {
         "caption": "d データ",
         "name": "DDATA",
-        "attributes": [ "fill" ]
+        "attributes": [ "fill", "small" ]
       }
     ],
     [

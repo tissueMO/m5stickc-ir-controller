@@ -12,8 +12,10 @@ module.exports = merge(common[0], {
   devtool: 'source-map',
   devServer: {
     contentBase: DEST_PATH,
-    watchContentBase: true,
     port: 3000,
+    host: '0.0.0.0',
+    disableHostCheck: true,
+    watchContentBase: true,
     open: true,
   },
 })
