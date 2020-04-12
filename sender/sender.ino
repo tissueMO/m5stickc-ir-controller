@@ -108,6 +108,7 @@ void loop() {
     // 空行が現れたら終端とみなす
     // レスポンスを返す
     client.println("HTTP/1.1 200 OK");
+    client.println("Access-Control-Allow-Origin: *");
     client.println("Connection: close");
     client.println();
 
