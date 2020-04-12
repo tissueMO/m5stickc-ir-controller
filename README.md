@@ -57,6 +57,7 @@ M5StickC の IR トランスミッターを利用したリモコンアプリで�
 - コマンドライン上で `/frontend` に移動した状態で以下のコマンドで Node.js で使用する依存パッケージをインストールします。
     - `$ yarn`
 - `/frontend/src/js/settings.example.js` をもとに環境依存する値 (APIサーバーのURL、末尾に / を含まないもの) を設定した `/frontend/src/js/settings.js` を作成します。
+- 次節で取得する赤外線コード情報をもとに、対応するボタンの名前やレイアウト情報を `/frontend/src/json/buttons.json` に書き込みます。
 - 以下のコマンドで公開ファイル群をビルドします。
     - `$ yarn run dev`
         - 本番モードでビルドするには `$ yarn run build` とします。
@@ -72,9 +73,12 @@ M5StickC の IR トランスミッターを利用したリモコンアプリで�
 - M5StickC に 赤外線送受信ユニット (IR ユニット) を接続します。
 - M5StickC を USB 接続します。
 - Arduino IDE のボードマネージャから M5StickC をインストールします。
-- Arduino IDE から任意の受信プログラムを書き込み、リモコンの赤外線情報を取り込みます。
+- Arduino IDE から任意の受信プログラムを書き込みます。
     - Arduino のスケッチ例 `IRemoteESP8266/IRecvDumpV2` がお勧めです。
         - ライブラリ IRremoteESP8266 のインストールが必要です。
+- Arduino IDE のシリアルモニターから M5StickC が起動していることを確認します。
+- IR ユニットにリモコンの赤外線を照射し、コード情報を取得します。
+    - Arduino IDE のシリアルモニターにコードの中身が表示されるので、これをどこかに控えておいて下さい。
 
 
 #### 赤外線を発信するサーバーの構築
@@ -84,6 +88,8 @@ M5StickC の IR トランスミッターを利用したリモコンアプリで�
 - (再掲) Arduino IDE のボードマネージャから M5StickC をインストールします。
 - Arduino IDE から `/sender/sender.ino` を開きます。
 - `/sender/settings.example.h` をもとに適宜設定値を含めた `/sender/settings.h` を作成し、環境依存する値のマクロを定義します。
+- 前節で取得した赤外線コード情報をもとに `/sender/remote.h` を更新します。
+    - ボタンの名前は フロント部 [frontend] で定義した名前と一致するようにして下さい。
 - コンパイル & M5StickC への書き込みを行います。
 
 
