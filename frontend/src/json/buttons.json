@@ -1,0 +1,318 @@
+{
+  "buttonsGrid": [
+    [
+      {
+        "caption": "<span class=\"material-icons\">power_settings_new</span>",
+        "name": "POWER",
+        "attributes": [ "rounded-circle" ],
+        "color": "success"
+      },
+      {
+        "caption": "<span class=\"material-icons\">volume_mute</span>",
+        "name": "MUTE",
+        "attributes": [ "rounded-circle" ]
+      }
+    ],
+    [
+      "hr"
+    ],
+    [
+      {
+        "caption": "入力切換",
+        "name": "INPUTSELECT",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "地デジ",
+        "name": "TERRESTRIALDIGITAL",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "オフタイマー",
+        "name": "OFFTIMER",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "3桁入力",
+        "name": "3DIGIT",
+        "attributes": [ "fill" ]
+      }
+    ],
+    [
+      {
+        "caption": "画面表示",
+        "name": "DISPLAY",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "画面サイズ",
+        "name": "SIZE",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "省エネ",
+        "name": "SAVEENERGY",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "d データ",
+        "name": "DDATA",
+        "attributes": [ "fill" ]
+      }
+    ],
+    [
+      "hr"
+    ],
+    [
+      {
+        "caption": "1",
+        "name": "1CH",
+        "attributes": [ "rounded-circle", "centered", "strong" ]
+      },
+      {
+        "caption": "2",
+        "name": "2CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      },
+      {
+        "caption": "3",
+        "name": "3CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      }
+    ],
+    [
+      {
+        "caption": "4",
+        "name": "4CH",
+        "attributes": [ "rounded-circle", "centered", "strong" ]
+      },
+      {
+        "caption": "5",
+        "name": "5CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      },
+      {
+        "caption": "6",
+        "name": "6CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      }
+    ],
+    [
+      {
+        "caption": "7",
+        "name": "7CH",
+        "attributes": [ "rounded-circle", "centered", "strong" ]
+      },
+      {
+        "caption": "8",
+        "name": "8CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      },
+      {
+        "caption": "9",
+        "name": "9CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      }
+    ],
+    [
+      {
+        "caption": "10",
+        "name": "10CH",
+        "attributes": [ "rounded-circle", "centered", "strong" ]
+      },
+      {
+        "caption": "11",
+        "name": "11CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      },
+      {
+        "caption": "12",
+        "name": "12CH",
+        "attributes": [ "rounded-circle", "strong" ]
+      }
+    ],
+    [
+      "hr"
+    ],
+    [
+      {
+        "caption": "番組表",
+        "name": "PROGRAMTABLE",
+        "attributes": [ "rounded", "fill" ]
+      },
+      {
+        "caption": "録画リスト",
+        "name": "RECORDLIST",
+        "attributes": [ "rounded", "fill" ]
+      }
+    ],
+    [
+      {
+        "caption": "＋",
+        "name": "VOLUMEUP",
+        "attributes": [ "rounded-circle", "centered", "strong" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">arrow_upward</span>",
+        "name": "CHANNELUP",
+        "attributes": [ "rounded-circle", "strong" ]
+      }
+    ],
+    [
+      {
+        "caption": "－",
+        "name": "VOLUMEDOWN",
+        "attributes": [ "rounded-circle", "centered", "strong" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">arrow_downward</span>",
+        "name": "CHANNELDOWN",
+        "attributes": [ "rounded-circle", "strong" ]
+      }
+    ],
+    [
+      {
+        "caption": "番組情報",
+        "name": "PROGRAMINFO",
+        "attributes": [ "rounded", "fill" ]
+      },
+      {
+        "caption": "予約リスト",
+        "name": "RESERVELIST",
+        "attributes": [ "rounded", "fill" ]
+      }
+    ],
+    [
+      "hr"
+    ],
+    [
+      {
+        "caption": "メニュー",
+        "name": "MENU",
+        "attributes": [ "rounded", "fill" ]
+      },
+      {
+        "caption": "戻る",
+        "name": "RETURN",
+        "attributes": [ "rounded", "fill" ]
+      }
+    ],
+    [
+      {
+        "caption": "<span class=\"material-icons\">keyboard_arrow_up</span>",
+        "name": "UP",
+        "attributes": [ "rounded-circle", "centered" ]
+      }
+    ],
+    [
+      {
+        "caption": "<span class=\"material-icons\">keyboard_arrow_left</span>",
+        "name": "LEFT",
+        "attributes": [ "rounded-circle", "centered" ]
+      },
+      {
+        "caption": "決定",
+        "name": "DECIDE",
+        "attributes": [ "rounded", "strong" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">keyboard_arrow_right</span>",
+        "name": "RIGHT",
+        "attributes": [ "rounded-circle" ]
+      }
+    ],
+    [
+      {
+        "caption": "<span class=\"material-icons\">keyboard_arrow_down</span>",
+        "name": "DOWN",
+        "attributes": [ "rounded-circle", "centered" ]
+      }
+    ],
+    [
+      {
+        "caption": "録画",
+        "name": "RECORD",
+        "attributes": [ "rounded", "fill" ],
+        "color": "danger"
+      },
+      {
+        "caption": "録画停止",
+        "name": "RECORDSTOP",
+        "attributes": [ "rounded", "fill" ]
+      }
+    ],
+    [
+      "hr"
+    ],
+    [
+      {
+        "caption": "&nbsp;",
+        "name": "BLUE",
+        "attributes": [ "rounded", "fill" ],
+        "color": "info"
+      },
+      {
+        "caption": "&nbsp;",
+        "name": "RED",
+        "attributes": [ "rounded", "fill" ],
+        "color": "danger"
+      },
+      {
+        "caption": "&nbsp;",
+        "name": "GREEN",
+        "attributes": [ "rounded", "fill" ],
+        "color": "success"
+      },
+      {
+        "caption": "&nbsp;",
+        "name": "YELLOW",
+        "attributes": [ "rounded", "fill" ],
+        "color": "warning"
+      }
+    ],
+    [
+      {
+        "caption": "<span class=\"material-icons\">play_arrow</span>&nbsp;<span class=\"material-icons\">pause</span>",
+        "name": "PLAYPAUSE",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">stop</span>",
+        "name": "STOP",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">fast_rewind</span>",
+        "name": "FASTREWIND",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">fast_forward</span>",
+        "name": "FASTFORWARD",
+        "attributes": [ "fill" ]
+      }
+    ],
+    [
+      {
+        "caption": "音声切換",
+        "name": "AUDIOSELECT",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "字幕",
+        "name": "SUBTITLES",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">skip_previous</span>",
+        "name": "PREVIOUS",
+        "attributes": [ "fill" ]
+      },
+      {
+        "caption": "<span class=\"material-icons\">skip_next</span>",
+        "name": "NEXT",
+        "attributes": [ "fill" ]
+      }
+    ]
+  ]
+}

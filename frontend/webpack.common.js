@@ -1,4 +1,5 @@
 // 各種プラグインのロード
+const fs = require("fs");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
@@ -27,6 +28,26 @@ const getEntriesList = (targetTypes) => {
   return entriesList;
 }
 
+// JSONに定義した動的コンテンツを読み込む
+const getDynamicContentsJsonFiles = () => {
+  let jsonFiles = [];
+  const filesMatched = globule.find([`**/*.json`], {cwd: `${__dirname}/src/json`});
+
+  for (const srcName of filesMatched) {
+    jsonFiles.push(`${__dirname}/src/json/${srcName}`);
+  }
+
+  return jsonFiles;
+};
+const dynamicContentsJsonFiles = getDynamicContentsJsonFiles();
+let dynamicContents = {};
+for (const jsonFile of dynamicContentsJsonFiles) {
+  const jsonText = fs.readFileSync(jsonFile, "utf-8");
+  const json = JSON.parse(jsonText);
+  Object.assign(dynamicContents, json);
+}
+
+
 const app = {
   entry: Object.assign(
     {
@@ -52,6 +73,8 @@ const app = {
           {
             loader: "ejs-html-loader",
             options: {
+              // JSON動的コンテンツをEJSにインジェクションする
+              contents: dynamicContents,
             },
           },
         ],

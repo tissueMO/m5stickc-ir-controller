@@ -1,0 +1,16 @@
+<% if (!('attributes' in button)) { %>
+  <% button.attributes = []; %>
+<% } %>
+<% if (!('color' in button)) { %>
+  <% button.color = 'light'; %>
+<% } %>
+
+<button class="js-remote-button btn m-1
+  <%- 'btn-' + button.color %>
+  <%- (button.attributes.includes('rounded-circle')) ? 'rounded-circle p-0' : 'py-3' %>
+  <%- (button.attributes.includes('rounded')) ? 'rounded-pill' : '' %>
+  <%- (button.attributes.includes('fill')) ? 'flex-fill' : '' %>
+  <%- (button.attributes.includes('strong')) ? 'font-weight-bold h3' : '' %>
+" type="button" data-codename="<%- button.name %>">
+  <%- button.caption %>
+</button>

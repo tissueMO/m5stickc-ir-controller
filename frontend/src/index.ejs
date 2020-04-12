@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title>TVリモコン操作</title>
+  <%- include('templates/_head'); %>
 </head>
-<body>
+<body class="app">
+<%- include('templates/_header'); %>
 
+<div class="app-body js-dashboard">
+  <main class="main">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">TVリモコン</li>
+      </ol>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 mx-auto">
+          <div class="card-body">
+            <h1 class="ml-n2 mb-4 js-card-title">TVリモコン</h1>
+            <div class="row js-remote-controller">
+              <div class="col-12">
+                <form class="js-remote-controller-form">
+                  <%- include('templates/_button_grid'); %>
+                </form>
+              </div>
+            </div><!-- row -->
+          </div><!-- card-body -->
+        </div><!-- card -->
+      </div><!-- row -->
+    </div><!-- container-fluid -->
+  </main>
+</div><!-- app-body -->
+
+<%- include('templates/_footer'); %>
 </body>
 </html>
