@@ -74,7 +74,7 @@ M5StickC の IR トランスミッターを利用したリモコンアプリで�
 - M5StickC を USB 接続します。
 - Arduino IDE のボードマネージャから M5StickC をインストールします。
 - Arduino IDE から任意の受信プログラムを書き込みます。
-    - Arduino のスケッチ例 `IRemoteESP8266/IRecvDumpV2` がお勧めです。
+    - Arduino のスケッチ例 `IRremoteESP8266/IRecvDumpV2` がお勧めです。
         - ライブラリ IRremoteESP8266 のインストールが必要です。
 - Arduino IDE のシリアルモニターから M5StickC が起動していることを確認します。
 - IR ユニットにリモコンの赤外線を照射し、コード情報を取得します。
