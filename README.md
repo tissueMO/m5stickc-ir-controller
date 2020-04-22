@@ -1,4 +1,4 @@
-# M5StickC専用 TVリモコン
+# M5StickC専用 遠隔リモコン
 
 ## Summary
 
