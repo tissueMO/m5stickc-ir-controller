@@ -60,6 +60,7 @@ jobs:
 
   push:
     # ビルドした静的コンテンツを Docker コンテナーに封入して GitHub Packages にプッシュする
+    name: Push docker image to GitHub Packages
     runs-on: ubuntu-latest
     needs: build
 
@@ -71,11 +72,11 @@ jobs:
         with:
           name: ${{ env.DIST_DIR }}
 
-      - name: Build image
-        run: docker build --file $DOCKER_FILE --tag $IMAGE_NAME .
-
       - name: Login registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login $DOCKER_REGISTRY -u ${{ github.actor }} --password-stdin
+
+      - name: Build image
+        run: docker build --file $DOCKER_FILE --tag $IMAGE_NAME .
 
       - name: Push image
         run: |
