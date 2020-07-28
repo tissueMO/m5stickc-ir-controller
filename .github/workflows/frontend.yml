@@ -45,8 +45,7 @@ jobs:
       - name: Add secrets file
         run: |
           cat <<EOL > ./$TARGET_DIR/src/js/settings.js
-          ${{ secrets.FRONTEND_SETTINGS_JS }}
-          EOL
+          ${{ secrets.FRONTEND_SETTINGS_JS }}EOL
 
       - name: Build for production
         run: yarn run build
