@@ -100,10 +100,10 @@ jobs:
     steps:
       # 開発用
       - name: Send HTTP-POST to Webhook-URL for Develop
-        if: github.ref != 'master'
+        if: github.ref != 'refs/heads/master'
         run: curl -X POST -L ${{ secrets.FRONTEND_DEVELOP_DOCKER_WEBHOOK_URL }}
 
       # 本番用
       - name: Send HTTP-POST to Webhook-URL for Production
-        if: github.ref == 'master'
+        if: github.ref == 'refs/heads/master'
         run: curl -X POST -L ${{ secrets.FRONTEND_PRODUCTION_DOCKER_WEBHOOK_URL }}
