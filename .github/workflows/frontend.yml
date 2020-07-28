@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
-    tags:
-      - v*
+      - develop
   pull_request:
     branches:
       - master
+      - develop
 
 env:
   DIST_DIR: public
@@ -93,9 +93,17 @@ jobs:
 
   deploy:
     # GitHub Packages にプッシュした最新のイメージをデプロイ先に通知する
-    name: Deploy docker image
+    name: Deploy image
     runs-on: ubuntu-latest
     needs: push
 
     steps:
-      - run: curl -X POST -L ${{ secrets.FRONTEND_DOCKER_WEBHOOK_URL }}
+      # 開発用
+      - name: Send HTTP-POST to Webhook-URL for Develop
+        if: github.ref != 'master'
+        run: curl -X POST -L ${{ secrets.FRONTEND_DEVELOP_DOCKER_WEBHOOK_URL }}
+
+      # 本番用
+      - name: Send HTTP-POST to Webhook-URL for Production
+        if: github.ref == 'master'
+        run: curl -X POST -L ${{ secrets.FRONTEND_PRODUCTION_DOCKER_WEBHOOK_URL }}
