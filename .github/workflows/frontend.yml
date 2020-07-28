@@ -11,6 +11,7 @@ on:
       - master
 
 env:
+  DIST_DIR: public
   TARGET_DIR: frontend
   IMAGE_NAME: frontend
   DOCKER_FILE: Dockerfile-frontend
@@ -54,8 +55,8 @@ jobs:
       - name: Upload result for next job
         uses: actions/upload-artifact@v1
         with:
-          name: dist
-          path: ${{ env.TARGET_DIR }}/dist
+          name: ${{ env.DIST_DIR }}
+          path: ${{ env.TARGET_DIR }}/${{ env.DIST_DIR }}
 
   push:
     # ビルドした静的コンテンツを Docker コンテナーに封入して GitHub Packages にプッシュする
@@ -68,7 +69,7 @@ jobs:
       - name: Download result from previous job
         uses: actions/download-artifact@v1
         with:
-          name: dist
+          name: ${{ env.DIST_DIR }}
 
       - name: Build image
         run: docker build --file $DOCKER_FILE --tag $IMAGE_NAME .
