@@ -33,24 +33,24 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ~/.cache/yarn
-          key: ${{ runner.os }}-${{ github.repository }}-${{ hashFiles(format('{0}{1}', github.workspace, '$TARGET_DIR/yarn.lock')) }}
+          key: ${{ runner.os }}-${{ github.repository }}-${{ hashFiles(format('{0}{1}', github.workspace, '${{ env.TARGET_DIR }}/yarn.lock')) }}
           restore-keys:
             ${{ runner.os }}-${{ github.repository }}-
 
       - name: Install dependencies
         run: yarn
-        working-directory: $TARGET_DIR
+        working-directory: ${{ env.TARGET_DIR }}
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Build for production
         run: yarn run build
-        working-directory: $TARGET_DIR
+        working-directory: ${{ env.TARGET_DIR }}
 
       - name: Upload result for next job
         uses: actions/upload-artifact@v1
         with:
           name: dist
-          path: $TARGET_DIR/dist
+          path: ${{ env.TARGET_DIR }}/dist
 
   push:
     # ビルドした静的コンテンツを Docker コンテナーに封入して GitHub Packages にプッシュする
