@@ -15,7 +15,7 @@ env:
   TARGET_DIR: frontend
   IMAGE_NAME: frontend
   DOCKER_FILE: Dockerfile-frontend
-  DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+  DOCKER_REGISTRY: docker.pkg.github.com
 
 jobs:
   build:
@@ -59,8 +59,8 @@ jobs:
           path: ${{ env.TARGET_DIR }}/${{ env.DIST_DIR }}
 
   push:
-    # ビルドした静的コンテンツを Docker コンテナーに封入してレジストリーにプッシュする
-    name: Push docker image to Docker Registry
+    # ビルドした静的コンテンツを Docker コンテナーに封入して GitHub Packages にプッシュする
+    name: Push docker image to GitHub Packages
     runs-on: ubuntu-latest
     needs: build
 
@@ -71,6 +71,9 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: ${{ env.DIST_DIR }}
+
+      - name: Login registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login $DOCKER_REGISTRY -u ${{ github.actor }} --password-stdin
 
       - name: Build image
         run: docker build --file $DOCKER_FILE --tag $IMAGE_NAME .
@@ -89,7 +92,7 @@ jobs:
           docker push $IMAGE_ID:$IMAGE_VERSION
 
   deploy:
-    # レジストリーにプッシュした最新のイメージをデプロイ先に通知する
+    # GitHub Packages にプッシュした最新のイメージをデプロイ先に通知する
     name: Deploy image
     runs-on: ubuntu-latest
     needs: push
