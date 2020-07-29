@@ -43,10 +43,9 @@ jobs:
         working-directory: ${{ env.TARGET_DIR }}
         if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: Add secrets file
-        run: |
-          cat <<EOL > ./$TARGET_DIR/src/js/settings.js
-          ${{ secrets.FRONTEND_SETTINGS_JS }}EOL
+      - name: Add non-versioned file
+        # ESLint を通すためにサンプルをそのままコピーし、実稼働ではコンテナ起動時にマウントする想定
+        run: cp ./$TARGET_DIR/src/js/settings.example.js ./$TARGET_DIR/src/js/settings.js
 
       - name: Build for production
         run: yarn run build
